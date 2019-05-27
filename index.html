@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var k=(function ktv(){
+            var leastPrice=1000;
+            var total=0;
+            return {
+                buy:function(price){
+                    total+=price;
+                },
+                pay:()=>{
+                    if (total<leastPrice) {
+                        console.log('请继续购物');
+                    }else{
+                        console.log('欢迎下次光临');
+                    }
+                },
+                // boss:function(id){
+                //     if(id==888){
+                //         leastPrice=total;
+                //         console.log('现在最低消费为：',leastPrice);
+                //     }else{
+                //         console.log('权限不足');
+                //     }
+                // }
+                boss:(id,price)=>{
+                    if(id===888){
+                        leastPrice=price;
+                        console.log('现在最低消费为：',leastPrice);
+                    }else{
+                        console.log('权限不足');
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+</html>
